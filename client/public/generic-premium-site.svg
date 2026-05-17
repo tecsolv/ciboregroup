@@ -1,0 +1,36 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1600" height="900" fill="#07140F"/>
+<rect x="0" y="0" width="1600" height="900" fill="url(#g)"/>
+<rect x="820" y="120" width="520" height="520" rx="8" fill="#1A2A24" stroke="#2E4B3F"/>
+<rect x="860" y="160" width="440" height="440" rx="4" fill="#243A31"/>
+<g opacity="0.9">
+<rect x="890" y="190" width="70" height="70" fill="#D6A93D"/>
+<rect x="990" y="190" width="70" height="70" fill="#D6A93D"/>
+<rect x="1090" y="190" width="70" height="70" fill="#D6A93D"/>
+<rect x="1190" y="190" width="70" height="70" fill="#D6A93D"/>
+</g>
+<g opacity="0.8">
+<rect x="890" y="300" width="70" height="70" fill="#D6A93D"/>
+<rect x="990" y="300" width="70" height="70" fill="#D6A93D"/>
+<rect x="1090" y="300" width="70" height="70" fill="#D6A93D"/>
+<rect x="1190" y="300" width="70" height="70" fill="#D6A93D"/>
+</g>
+<rect x="940" y="520" width="160" height="90" fill="#111"/>
+<rect x="120" y="620" width="180" height="180" rx="30" fill="#0A0F0D" stroke="#1ED760" stroke-width="6"/>
+<rect x="160" y="660" width="100" height="70" rx="18" fill="#0F241A" stroke="#1ED760" stroke-width="5"/>
+<path d="M285 700C320 710 340 760 320 820" stroke="#1ED760" stroke-width="7"/>
+<circle cx="540" cy="720" r="90" fill="#0C1512" opacity="0.5"/>
+<rect x="0" y="720" width="1600" height="180" fill="url(#fade)"/>
+<text x="120" y="120" fill="#F5F5F5" font-size="62" font-family="Arial" font-weight="700">PREMIUM DESTINATION</text>
+<text x="120" y="190" fill="#D6A93D" font-size="36" font-family="Arial">Future-ready mobility infrastructure</text>
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+<stop stop-color="#081B15"/>
+<stop offset="1" stop-color="#000000"/>
+</linearGradient>
+<linearGradient id="fade" x1="800" y1="720" x2="800" y2="900" gradientUnits="userSpaceOnUse">
+<stop stop-color="#07140F" stop-opacity="0"/>
+<stop offset="1" stop-color="#07140F"/>
+</linearGradient>
+</defs>
+</svg>
