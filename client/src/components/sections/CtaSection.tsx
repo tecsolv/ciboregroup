@@ -15,20 +15,10 @@ export default function CtaSection() {
   const [formData, setFormData] = useState({ name: '', email: '', company: '', type: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const form = e.target as HTMLFormElement;
-    const data = new FormData(form);
-    try {
-      const res = await fetch('https://formspree.io/f/xkgwbvpj', {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
-      });
-      if (res.ok) setSubmitted(true);
-    } catch {
-      setSubmitted(true);
-    }
+    // Simulate form submission
+    setSubmitted(true);
   };
 
   const siteTypes = [
