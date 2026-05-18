@@ -35,7 +35,7 @@ export default function Footer() {
           <div className="md:col-span-1">
             {/* Logo */}
             <img
-              src="/manus-storage/Gemini_Generated_Image_jnajdtjnajdtjnajcopy_4f4ec83b.png"
+              src="/cibore-logo.png"
               alt="CIBORE Logo"
               className="h-12 w-auto mb-6"
             />

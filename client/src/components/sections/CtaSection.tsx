@@ -2,6 +2,7 @@
  * CIBORE V2 — CTA Final Section
  * Design: Midnight Cartography — emotional peak, joining the future
  * Full-bleed dark section with contact form and strong emotional copy
+ * Form connected to Formspree — contact@cibore.ci
  */
 
 import React, { useState } from 'react';
@@ -9,16 +10,49 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useInView } from '@/hooks/useInView';
 import { ArrowRight, Send } from 'lucide-react';
 
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/contact@cibore.ci';
+
 export default function CtaSection() {
   const { lang, t } = useLanguage();
   const { ref, inView } = useInView({ threshold: 0.1 });
   const [formData, setFormData] = useState({ name: '', email: '', company: '', type: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setError('');
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          siteType: formData.type,
+          message: formData.message,
+          _subject: `CIBORE — Nouveau contact : ${formData.name} (${formData.type})`,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        const data = await response.json();
+        setError(data?.errors?.[0]?.message || (lang === 'fr' ? 'Une erreur est survenue. Veuillez réessayer.' : 'An error occurred. Please try again.'));
+      }
+    } catch {
+      setError(lang === 'fr' ? 'Une erreur est survenue. Veuillez réessayer.' : 'An error occurred. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const siteTypes = [
@@ -27,6 +61,7 @@ export default function CtaSection() {
     { value: 'commercial', fr: 'Centre commercial', en: 'Shopping center' },
     { value: 'business', fr: 'Immeuble de bureaux', en: 'Office building' },
     { value: 'investor', fr: 'Investisseur', en: 'Investor' },
+    { value: 'supplier', fr: 'Fournisseur / Partenaire industriel', en: 'Supplier / Industrial partner' },
     { value: 'other', fr: 'Autre', en: 'Other' },
   ];
 
@@ -92,8 +127,8 @@ export default function CtaSection() {
               }}
             >
               {t(
-                'Les leaders africains de la mobilité de demain se positionnent aujourd\'hui. Votre site peut être l\'un des premiers à faire partie du réseau CIBORE.',
-                'Africa\'s mobility leaders of tomorrow are positioning themselves today. Your site can be one of the first to be part of the CIBORE network.'
+                "Les leaders africains de la mobilité de demain se positionnent aujourd'hui. Votre site peut être l'un des premiers à faire partie du réseau CIBORE.",
+                "Africa's mobility leaders of tomorrow are positioning themselves today. Your site can be one of the first to be part of the CIBORE network."
               )}
             </p>
 
@@ -187,9 +222,7 @@ export default function CtaSection() {
                     background: 'oklch(0.09 0.010 240)',
                   }}
                 >
-                  <p
-                    className="section-label mb-1"
-                  >
+                  <p className="section-label mb-1">
                     {t('Formulaire de contact', 'Contact form')}
                   </p>
                   <p
@@ -316,17 +349,27 @@ export default function CtaSection() {
                       fontSize: '0.9375rem',
                       fontWeight: 300,
                     }}
-                    onFocus={(e) => {
-                      e.target.style.borderColor = 'oklch(0.62 0.19 220 / 50%)';
-                    }}
-                    onBlur={(e) => {
-                      e.target.style.borderColor = 'oklch(1 0 0 / 8%)';
-                    }}
+                    onFocus={(e) => { e.target.style.borderColor = 'oklch(0.62 0.19 220 / 50%)'; }}
+                    onBlur={(e) => { e.target.style.borderColor = 'oklch(1 0 0 / 8%)'; }}
                   />
                 </div>
 
-                <button type="submit" className="btn-primary w-full justify-center mt-2">
-                  {t('Devenir partenaire CIBORE', 'Become a CIBORE partner')}
+                {/* Error message */}
+                {error && (
+                  <p style={{ color: 'oklch(0.65 0.20 30)', fontSize: '0.875rem', fontFamily: "'Space Grotesk', sans-serif" }}>
+                    {error}
+                  </p>
+                )}
+
+                <button
+                  type="submit"
+                  className="btn-primary w-full justify-center mt-2"
+                  disabled={isSubmitting}
+                  style={{ opacity: isSubmitting ? 0.7 : 1 }}
+                >
+                  {isSubmitting
+                    ? t('Envoi en cours...', 'Sending...')
+                    : t('Devenir partenaire CIBORE', 'Become a CIBORE partner')}
                   <ArrowRight size={14} />
                 </button>
               </form>

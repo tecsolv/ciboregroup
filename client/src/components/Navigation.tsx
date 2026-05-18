@@ -49,7 +49,7 @@ export default function Navigation() {
               className="flex items-center gap-2 group"
             >
               <img
-                src="/manus-storage/Gemini_Generated_Image_jnajdtjnajdtjnajcopy_4f4ec83b.png"
+                src="/cibore-logo.png"
                 alt="CIBORE Logo"
                 className="h-10 w-auto"
               />
