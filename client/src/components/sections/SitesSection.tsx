@@ -1,16 +1,12 @@
 /*
  * CIBORE V2 — Sites Stratégiques Section
  * Design: Midnight Cartography — premium destination cards
- * Asymmetric grid with image and text cards
  */
 
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useInView } from '@/hooks/useInView';
 import { Building2, Hotel, ShoppingBag, Briefcase, MapPin, Zap } from 'lucide-react';
-
-const SITES_IMAGE = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663658365107/3kG2Z6cjcUyd474D4MMg23/cibore-sites-6GYsqPNCMkmVYfTTB5pUX6.webp';
-const INFRA_IMAGE = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663658365107/3kG2Z6cjcUyd474D4MMg23/cibore-infrastructure-KPJyjLshwFFxrmzvtjRQwb.webp';
 
 const siteTypes = [
   {
@@ -69,6 +65,7 @@ export default function SitesSection() {
       style={{ background: 'oklch(0.09 0.010 240)' }}
     >
       <div className="container relative z-10">
+
         {/* Header */}
         <div
           className={`mb-16 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
@@ -117,84 +114,24 @@ export default function SitesSection() {
           </div>
         </div>
 
-        {/* Main grid */}
-        <div className="grid lg:grid-cols-3 gap-6">
-          {/* Large image card */}
-          <div
-            className={`lg:col-span-2 relative overflow-hidden transition-all duration-700 ${
-              inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}
-            style={{ minHeight: '400px', transitionDelay: '150ms' }}
-          >
-            <img
-              src={SITES_IMAGE}
-              alt="CIBORE Partner Site"
-              className="w-full h-full object-cover"
-              style={{ minHeight: '400px' }}
-            />
-            <div
-              className="absolute inset-0"
-              style={{
-                background: 'linear-gradient(to top, oklch(0.07 0.008 240 / 90%) 0%, oklch(0.07 0.008 240 / 40%) 50%, transparent 100%)',
-              }}
-            />
-            <div className="absolute bottom-0 left-0 p-8">
-              <span className="section-label mb-3 block">
-                {t('Site partenaire premium', 'Premium partner site')}
-              </span>
-              <p
-                className="font-display"
-                style={{
-                  fontSize: 'clamp(1.25rem, 2.5vw, 1.75rem)',
-                  fontWeight: 600,
-                  color: 'oklch(0.97 0.003 240)',
-                  lineHeight: 1.2,
-                }}
-              >
-                {t(
-                  'Des destinations préparées pour l\'avenir.',
-                  'Destinations prepared for the future.'
-                )}
-              </p>
-            </div>
-          </div>
-
-          {/* Infrastructure image */}
-          <div
-            className={`relative overflow-hidden transition-all duration-700 ${
-              inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}
-            style={{ minHeight: '400px', transitionDelay: '250ms' }}
-          >
-            <img
-              src={INFRA_IMAGE}
-              alt="CIBORE Infrastructure"
-              className="w-full h-full object-cover"
-              style={{ minHeight: '400px' }}
-            />
-            <div
-              className="absolute inset-0"
-              style={{
-                background: 'linear-gradient(to top, oklch(0.07 0.008 240 / 85%) 0%, oklch(0.07 0.008 240 / 20%) 60%, transparent 100%)',
-              }}
-            />
-            <div className="absolute bottom-0 left-0 p-6">
-              <span className="section-label mb-2 block">
-                {t('Infrastructure CIBORE', 'CIBORE Infrastructure')}
-              </span>
-              <p
-                style={{
-                  fontFamily: "'Space Grotesk', sans-serif",
-                  fontSize: '0.875rem',
-                  fontWeight: 300,
-                  color: 'oklch(0.75 0.005 240)',
-                  lineHeight: 1.5,
-                }}
-              >
-                {t('Abidjan Plateau', 'Abidjan Plateau')}
-              </p>
-            </div>
-          </div>
+        {/* Single full-width premium image — no text overlay */}
+        <div
+          className={`relative overflow-hidden w-full transition-all duration-700 ${
+            inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+          style={{ transitionDelay: '150ms' }}
+        >
+          <img
+            src="/cibore-sites-premium.png"
+            alt="CIBORE — Infrastructure de recharge premium"
+            className="w-full h-auto object-cover"
+            style={{
+              display: 'block',
+              maxHeight: '520px',
+              objectFit: 'cover',
+              objectPosition: 'center',
+            }}
+          />
         </div>
 
         {/* Site types grid */}
@@ -207,7 +144,7 @@ export default function SitesSection() {
                 className={`card-dark p-6 transition-all duration-700 ${
                   inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}
-                style={{ transitionDelay: `${(i + 3) * 80}ms` }}
+                style={{ transitionDelay: `${(i + 2) * 80}ms` }}
               >
                 <div className="flex items-start gap-4">
                   <div
@@ -247,6 +184,7 @@ export default function SitesSection() {
             );
           })}
         </div>
+
       </div>
     </section>
   );
