@@ -5,23 +5,24 @@
  * Narrative signature in English (always), headline in FR/EN
  */
 
-import { useLanguage } from '@/contexts/LanguageContext';
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { useLanguage } from "@/contexts/LanguageContext";
+import { ArrowRight, ChevronDown } from "lucide-react";
 
-const HERO_IMAGE = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663658365107/3kG2Z6cjcUyd474D4MMg23/cibore-hero-dW9PYEnvHNfNP7aPBUTr4u.webp';
+const HERO_IMAGE =
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663658365107/3kG2Z6cjcUyd474D4MMg23/cibore-hero-dW9PYEnvHNfNP7aPBUTr4u.webp";
 
 export default function HeroSection() {
   const { lang, t } = useLanguage();
 
   const scrollToNext = () => {
-    const el = document.querySelector('#vision');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    const el = document.querySelector("#vision");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <section
       className="relative min-h-screen flex items-end section-cinematic"
-      style={{ background: 'oklch(0.07 0.008 240)' }}
+      style={{ background: "oklch(0.07 0.008 240)" }}
     >
       {/* Background image */}
       <div className="absolute inset-0 overflow-hidden">
@@ -29,29 +30,35 @@ export default function HeroSection() {
           src={HERO_IMAGE}
           alt="CIBORE EV Infrastructure"
           className="w-full h-full object-cover object-center"
-          style={{ transform: 'scale(1.04)', transition: 'transform 10s cubic-bezier(0.23, 1, 0.32, 1)' }}
+          style={{
+            transform: "scale(1.04)",
+            transition: "transform 10s cubic-bezier(0.23, 1, 0.32, 1)",
+          }}
           onLoad={(e) => {
-            (e.target as HTMLImageElement).style.transform = 'scale(1)';
+            (e.target as HTMLImageElement).style.transform = "scale(1)";
           }}
         />
         {/* Gradient overlay — desktop: left-heavy, mobile: bottom-heavy */}
         <div
           className="absolute inset-0 hidden md:block"
           style={{
-            background: 'linear-gradient(to right, oklch(0.07 0.008 240 / 97%) 0%, oklch(0.07 0.008 240 / 80%) 45%, oklch(0.07 0.008 240 / 25%) 75%, oklch(0.07 0.008 240 / 10%) 100%)',
+            background:
+              "linear-gradient(to right, oklch(0.07 0.008 240 / 97%) 0%, oklch(0.07 0.008 240 / 80%) 45%, oklch(0.07 0.008 240 / 25%) 75%, oklch(0.07 0.008 240 / 10%) 100%)",
           }}
         />
         <div
           className="absolute inset-0 md:hidden"
           style={{
-            background: 'linear-gradient(to bottom, oklch(0.07 0.008 240 / 50%) 0%, oklch(0.07 0.008 240 / 85%) 55%, oklch(0.07 0.008 240) 100%)',
+            background:
+              "linear-gradient(to bottom, oklch(0.07 0.008 240 / 50%) 0%, oklch(0.07 0.008 240 / 85%) 55%, oklch(0.07 0.008 240) 100%)",
           }}
         />
         {/* Bottom fade */}
         <div
           className="absolute bottom-0 left-0 right-0 h-48"
           style={{
-            background: 'linear-gradient(to bottom, transparent, oklch(0.07 0.008 240))',
+            background:
+              "linear-gradient(to bottom, transparent, oklch(0.07 0.008 240))",
           }}
         />
       </div>
@@ -63,7 +70,7 @@ export default function HeroSection() {
           <div className="flex items-center gap-3 mb-8 animate-fade-up">
             <span className="gold-line" />
             <span className="section-label">
-              {t('Côte d\'Ivoire · Afrique', 'Côte d\'Ivoire · Africa')}
+              {t("Côte d'Ivoire · Afrique", "Côte d'Ivoire · Africa")}
             </span>
           </div>
 
@@ -71,23 +78,35 @@ export default function HeroSection() {
           <h1
             className="font-display animate-fade-up delay-100"
             style={{
-              fontSize: 'clamp(2.5rem, 6vw, 5.5rem)',
+              fontSize: "clamp(2.5rem, 6vw, 5.5rem)",
               fontWeight: 700,
               lineHeight: 1.05,
-              color: 'oklch(0.97 0.003 240)',
-              marginBottom: '1.5rem',
+              color: "oklch(0.97 0.003 240)",
+              marginBottom: "1.5rem",
             }}
           >
-            {lang === 'fr' ? (
+            {lang === "fr" ? (
               <>
-                L'infrastructure de la<br />
-                <em style={{ color: 'oklch(0.62 0.19 220)', fontStyle: 'italic' }}>mobilité africaine</em><br />
+                L'infrastructure de la
+                <br />
+                <em
+                  style={{ color: "oklch(0.62 0.19 220)", fontStyle: "italic" }}
+                >
+                  mobilité africaine
+                </em>
+                <br />
                 est déjà en construction.
               </>
             ) : (
               <>
-                The infrastructure of<br />
-                <em style={{ color: 'oklch(0.62 0.19 220)', fontStyle: 'italic' }}>African mobility</em><br />
+                The infrastructure of
+                <br />
+                <em
+                  style={{ color: "oklch(0.62 0.19 220)", fontStyle: "italic" }}
+                >
+                  African mobility
+                </em>
+                <br />
                 is already being built.
               </>
             )}
@@ -97,18 +116,18 @@ export default function HeroSection() {
           <p
             className="animate-fade-up delay-200"
             style={{
-              fontSize: 'clamp(0.9rem, 1.5vw, 1.125rem)',
-              color: 'oklch(0.70 0.008 240)',
+              fontSize: "clamp(0.9rem, 1.5vw, 1.125rem)",
+              color: "oklch(0.70 0.008 240)",
               lineHeight: 1.7,
-              maxWidth: '520px',
-              marginBottom: '2.5rem',
+              maxWidth: "520px",
+              marginBottom: "2.5rem",
               fontFamily: "'Space Grotesk', sans-serif",
               fontWeight: 300,
             }}
           >
             {t(
-              'CIBORE développe le premier réseau structuré de recharge pour véhicules électriques en Côte d\'Ivoire.',
-              'CIBORE is building the first structured EV charging network in Côte d\'Ivoire.'
+              "CIBORE développe le premier réseau structuré de recharge pour véhicules électriques en Côte d'Ivoire.",
+              "CIBORE is building the first structured EV charging network in Côte d'Ivoire.",
             )}
           </p>
 
@@ -116,22 +135,22 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-up delay-300">
             <button
               onClick={() => {
-                const el = document.querySelector('#contact');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
+                const el = document.querySelector("#contact");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
               }}
               className="btn-primary"
             >
-              {t('Devenir site partenaire', 'Become a partner site')}
+              {t("Devenir site partenaire", "Become a partner site")}
               <ArrowRight size={14} />
             </button>
             <button
               onClick={() => {
-                const el = document.querySelector('#partenaires');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
+                const el = document.querySelector("#partenaires");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
               }}
               className="btn-ghost"
             >
-              {t('Dossier investisseur', 'Investor dossier')}
+              {t("Dossier investisseur", "Investor dossier")}
             </button>
           </div>
 
@@ -139,21 +158,22 @@ export default function HeroSection() {
           <div
             className="mt-16 animate-fade-up delay-500"
             style={{
-              borderLeft: '1px solid oklch(0.73 0.12 75 / 40%)',
-              paddingLeft: '1.25rem',
+              borderLeft: "1px solid oklch(0.73 0.12 75 / 40%)",
+              paddingLeft: "1.25rem",
             }}
           >
             <p
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: 'clamp(0.875rem, 1.2vw, 1rem)',
-                fontStyle: 'italic',
+                fontSize: "clamp(0.875rem, 1.2vw, 1rem)",
+                fontStyle: "italic",
                 fontWeight: 400,
-                color: 'oklch(0.73 0.12 75)',
+                color: "oklch(0.73 0.12 75)",
                 lineHeight: 1.6,
               }}
             >
-              "The future of African mobility is not a question.<br />
+              "The future of African mobility is not a question.
+              <br />
               CIBORE is the answer already being built."
             </p>
           </div>
@@ -168,18 +188,20 @@ export default function HeroSection() {
       >
         <span
           className="font-ui text-xs tracking-widest uppercase"
-          style={{ color: 'oklch(0.60 0.005 240)', fontSize: '0.625rem', letterSpacing: '0.2em' }}
+          style={{
+            color: "oklch(0.60 0.005 240)",
+            fontSize: "0.625rem",
+            letterSpacing: "0.2em",
+          }}
         >
-          {t('Découvrir', 'Discover')}
+          {t("Découvrir", "Discover")}
         </span>
         <ChevronDown
           size={16}
-          style={{ color: 'oklch(0.60 0.005 240)' }}
+          style={{ color: "oklch(0.60 0.005 240)" }}
           className="animate-bounce"
         />
       </button>
-
-
     </section>
   );
 }

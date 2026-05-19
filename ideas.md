@@ -1,6 +1,7 @@
 # CIBORE V2 — Design Brainstorm
 
 ## Contexte
+
 Landing page premium bilingue (FR/EN) pour CIBORE, premier réseau structuré de recharge EV en Côte d'Ivoire.
 Positionnement : Tesla × Apple × IONITY × Futurisme Africain.
 
@@ -14,6 +15,7 @@ Positionnement : Tesla × Apple × IONITY × Futurisme Africain.
 **Design Movement**: African Brutalist Futurism — the weight of concrete infrastructure meets the precision of digital systems.
 
 **Core Principles**:
+
 1. Monumental scale — typography and sections feel architecturally massive
 2. Controlled tension — asymmetric layouts with deliberate imbalance
 3. Material honesty — dark surfaces that feel like polished stone and carbon fiber
@@ -24,6 +26,7 @@ Positionnement : Tesla × Apple × IONITY × Futurisme Africain.
 **Layout Paradigm**: Full-bleed vertical sections with massive typographic anchors. Text breaks the grid intentionally. Numbers and statistics presented as architectural monuments.
 
 **Signature Elements**:
+
 1. Oversized counter/stat blocks that feel like infrastructure milestones
 2. Thin horizontal rule lines (1px) as section dividers — like circuit traces
 3. Diagonal crop overlays on section transitions
@@ -32,7 +35,8 @@ Positionnement : Tesla × Apple × IONITY × Futurisme Africain.
 
 **Animation**: Slow, deliberate fade-up with slight Y-axis translation (40px → 0). Section transitions use clip-path reveals. No bouncy or playful motion.
 
-**Typography System**: 
+**Typography System**:
+
 - Display: "Bebas Neue" or "Barlow Condensed" — monumental, condensed
 - Body: "DM Sans" — clean, modern, readable
 - Accent: Letter-spacing 0.3em on section labels
@@ -49,6 +53,7 @@ Positionnement : Tesla × Apple × IONITY × Futurisme Africain.
 **Design Movement**: Cinematic Infrastructure Noir — the visual language of premium automotive brands meets African cartographic heritage.
 
 **Core Principles**:
+
 1. Cinematic depth — every section feels like a film frame, not a webpage
 2. Spatial storytelling — generous negative space as a luxury signal
 3. Luminous precision — light as a design element, not just illumination
@@ -59,6 +64,7 @@ Positionnement : Tesla × Apple × IONITY × Futurisme Africain.
 **Layout Paradigm**: Asymmetric full-bleed sections. Left-anchored text blocks with right-side visual compositions. Sections breathe with 120-200px vertical padding. No symmetric two-column grids.
 
 **Signature Elements**:
+
 1. Thin gold horizontal lines as brand markers
 2. Large numeral typography (01, 02, 03) as section wayfinding
 3. SVG circuit/infrastructure line art as background texture
@@ -68,6 +74,7 @@ Positionnement : Tesla × Apple × IONITY × Futurisme Africain.
 **Animation**: Framer Motion scroll-triggered animations. Text slides in from left with opacity fade. Images scale subtly from 1.05 → 1.0 on reveal. Stagger delay 80ms between elements.
 
 **Typography System**:
+
 - Display: "Cormorant Garamond" (Bold/Italic) — aristocratic, visionary
 - Navigation & UI: "Space Grotesk" — modern, geometric, technical
 - Body: "Inter" (Light 300) — clean reading experience
@@ -85,6 +92,7 @@ Positionnement : Tesla × Apple × IONITY × Futurisme Africain.
 **Design Movement**: Precision Modernism — the Swiss grid discipline applied to African infrastructure storytelling.
 
 **Core Principles**:
+
 1. Grid as infrastructure — the layout IS the metaphor
 2. Data as beauty — statistics and facts presented as visual art
 3. Restrained palette — maximum 3 colors, used with surgical intent
@@ -95,6 +103,7 @@ Positionnement : Tesla × Apple × IONITY × Futurisme Africain.
 **Layout Paradigm**: Strict 12-column grid with intentional column breaks. Sections use alternating full-bleed and contained layouts. Typography dominates over imagery.
 
 **Signature Elements**:
+
 1. Data visualization elements (progress bars, counters) as decorative elements
 2. Monospaced code-style text for technical specifications
 3. Sharp geometric dividers (no rounded corners anywhere)
@@ -104,6 +113,7 @@ Positionnement : Tesla × Apple × IONITY × Futurisme Africain.
 **Animation**: Minimal — only opacity transitions and subtle scale. Duration never exceeds 200ms. No scroll-triggered animations.
 
 **Typography System**:
+
 - Display: "Neue Haas Grotesk" or "Aktiv Grotesk" — Swiss precision
 - Body: "IBM Plex Mono" — technical authority
 - Hierarchy: Strict modular scale (1.414 ratio)
