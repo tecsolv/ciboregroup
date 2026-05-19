@@ -17,11 +17,11 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType>({
   lang: 'fr',
   setLang: () => {},
-  t: (fr) => fr,
+  t: (fr, en) => en,
 });
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLang] = useState<Lang>('fr');
+  const [lang, setLang] = useState<Lang>('en');
 
   const t = (fr: string, en: string) => lang === 'fr' ? fr : en;
 

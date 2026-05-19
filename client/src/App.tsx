@@ -1,6 +1,7 @@
 /*
- * CIBORE V2 — App Root
- * Design: Midnight Cartography — dark theme, bilingual FR/EN
+ * CIBORE Group — App Root
+ * Design: Midnight Cartography — dark theme, bilingual EN/FR
+ * Includes: WhatsApp floating button + Cookie consent
  */
 
 import { Toaster } from "@/components/ui/sonner";
@@ -10,6 +11,8 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import WhatsAppButton from "./components/WhatsAppButton";
+import CookieConsent from "./components/CookieConsent";
 import Home from "./pages/Home";
 
 function Router() {
@@ -30,6 +33,9 @@ function App() {
           <TooltipProvider>
             <Toaster />
             <Router />
+            {/* Global floating components */}
+            <WhatsAppButton />
+            <CookieConsent />
           </TooltipProvider>
         </LanguageProvider>
       </ThemeProvider>

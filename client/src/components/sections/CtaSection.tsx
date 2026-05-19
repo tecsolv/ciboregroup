@@ -10,7 +10,9 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useInView } from '@/hooks/useInView';
 import { ArrowRight, Send } from 'lucide-react';
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/contact@cibore.ci';
+// TODO: Replace FORM_ID with your Formspree form ID after registering at formspree.io
+// Go to formspree.io → New Form → get your 8-char ID → replace xCIBOREg below
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xCIBOREg';
 
 export default function CtaSection() {
   const { lang, t } = useLanguage();
