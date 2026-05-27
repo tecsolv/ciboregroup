@@ -172,7 +172,7 @@ export default function TransformationSection() {
                         fontFamily: "'Space Grotesk', sans-serif",
                         fontSize: '0.8125rem',
                         fontWeight: 300,
-                        color: 'oklch(0.50 0.008 240)',
+                        color: 'oklch(0.65 0.008 240)',
                         lineHeight: 1.6,
                       }}
                     >

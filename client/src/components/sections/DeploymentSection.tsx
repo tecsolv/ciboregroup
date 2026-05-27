@@ -172,7 +172,7 @@ export default function DeploymentSection() {
                     ? 'oklch(0.73 0.12 75)'
                     : isActive
                     ? 'oklch(0.62 0.19 220)'
-                    : 'oklch(0.40 0.008 240)';
+                    : 'oklch(0.58 0.008 240)';
 
                   return (
                     <div
@@ -201,7 +201,7 @@ export default function DeploymentSection() {
                             style={{
                               fontSize: '0.9375rem',
                               fontWeight: 600,
-                              color: isDone || isActive ? 'oklch(0.95 0.003 240)' : 'oklch(0.45 0.008 240)',
+                              color: isDone || isActive ? 'oklch(0.95 0.003 240)' : 'oklch(0.62 0.008 240)',
                             }}
                           >
                             {lang === 'fr' ? phase.fr : phase.en}
@@ -224,7 +224,7 @@ export default function DeploymentSection() {
                             fontFamily: "'Space Grotesk', sans-serif",
                             fontSize: '0.875rem',
                             fontWeight: 300,
-                            color: isDone || isActive ? 'oklch(0.55 0.008 240)' : 'oklch(0.35 0.008 240)',
+                            color: isDone || isActive ? 'oklch(0.68 0.008 240)' : 'oklch(0.35 0.008 240)',
                             lineHeight: 1.6,
                           }}
                         >

@@ -69,7 +69,7 @@ export default function HeroSection() {
 
           {/* Main headline */}
           <h1
-            className="font-display animate-fade-up delay-100"
+            className="font-display animate-fade-up delay-100" aria-label="CIBORE headline"
             style={{
               fontSize: 'clamp(2.5rem, 6vw, 5.5rem)',
               fontWeight: 700,

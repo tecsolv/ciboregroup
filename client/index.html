@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CIBORE — L'Infrastructure de la Mobilité Africaine</title>
     <meta name="description" content="CIBORE développe le premier réseau structuré de recharge pour véhicules électriques en Côte d'Ivoire. L'avenir de la mobilité africaine est déjà en construction." />
     <meta name="keywords" content="CIBORE, recharge électrique, véhicules électriques, Côte d'Ivoire, Afrique, infrastructure mobilité, EV charging" />
@@ -11,11 +11,12 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://cibore.ci" />
     <meta name="theme-color" content="#080C12" />
-
-    <!-- Google Fonts: Cormorant Garamond (display) + Space Grotesk (UI) -->
+    <!-- Font preload for LCP -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300;400;600&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300;400;600&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300;400;600&display=swap" /></noscript>
   </head>
   <body>
     <div id="root"></div>

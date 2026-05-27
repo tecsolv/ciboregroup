@@ -187,7 +187,7 @@ export default function VisionSection() {
                         style={{
                           fontSize: '0.875rem',
                           fontWeight: 300,
-                          color: 'oklch(0.55 0.008 240)',
+                          color: 'oklch(0.68 0.008 240)',
                           lineHeight: 1.6,
                         }}
                       >

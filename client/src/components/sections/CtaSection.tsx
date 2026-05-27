@@ -10,9 +10,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useInView } from '@/hooks/useInView';
 import { ArrowRight, Send } from 'lucide-react';
 
-// TODO: Replace FORM_ID with your Formspree form ID after registering at formspree.io
-// Go to formspree.io → New Form → get your 8-char ID → replace xCIBOREg below
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xCIBOREg';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/contact@cibore.ci';
 
 export default function CtaSection() {
   const { lang, t } = useLanguage();
@@ -240,12 +238,15 @@ export default function CtaSection() {
                 </div>
 
                 {[
-                  { key: 'name', fr: 'Nom complet', en: 'Full name', type: 'text' },
+                  { key: 'name', id: 'cf-name', fr: 'Nom complet', en: 'Full name', type: 'text' },
                   { key: 'email', fr: 'Adresse email', en: 'Email address', type: 'email' },
                   { key: 'company', fr: 'Entreprise / Organisation', en: 'Company / Organization', type: 'text' },
                 ].map((field) => (
                   <div key={field.key}>
                     <label
+                    htmlFor="cf-message"
+                    htmlFor="cf-type"
+                      htmlFor={`cf-${field.key}`}
                       className="block mb-1.5"
                       style={{
                         fontFamily: "'Space Grotesk', sans-serif",
@@ -300,6 +301,8 @@ export default function CtaSection() {
                     {t('Type de site / Profil', 'Site type / Profile')}
                   </label>
                   <select
+                    id="cf-type"
+                    name="type"
                     value={formData.type}
                     onChange={(e) => setFormData({ ...formData, type: e.target.value })}
                     className="w-full px-4 py-3 outline-none transition-all duration-200"
@@ -339,6 +342,8 @@ export default function CtaSection() {
                     {t('Message (optionnel)', 'Message (optional)')}
                   </label>
                   <textarea
+                    id="cf-message"
+                    name="message"
                     rows={3}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}

@@ -3,8 +3,10 @@ import react from "@vitejs/plugin-react";
 import path from "node:path";
 import { defineConfig } from "vite";
 
+const plugins = [react(), tailwindcss()];
+
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins,
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
@@ -17,10 +19,15 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
-  },
-  server: {
-    port: 3000,
-    strictPort: false,
-    host: true,
+    cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-dom"],
+          motion: ["framer-motion"],
+          router: ["wouter"],
+        },
+      },
+    },
   },
 });

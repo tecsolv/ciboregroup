@@ -35,7 +35,7 @@ export default function Footer() {
           <div className="md:col-span-1">
             {/* Logo */}
             <img
-              src="/cibore-logo.png"
+              src="/cibore-logo.webp" width={120} height={36} loading="lazy" decoding="async"
               alt="CIBORE Logo"
               className="h-12 w-auto mb-6"
             />
@@ -45,7 +45,7 @@ export default function Footer() {
                 fontFamily: "'Space Grotesk', sans-serif",
                 fontSize: '0.8125rem',
                 fontWeight: 300,
-                color: 'oklch(0.45 0.008 240)',
+                color: 'oklch(0.62 0.008 240)',
                 lineHeight: 1.7,
                 marginBottom: '1.5rem',
               }}
@@ -98,10 +98,10 @@ export default function Footer() {
                       fontFamily: "'Space Grotesk', sans-serif",
                       fontSize: '0.875rem',
                       fontWeight: 300,
-                      color: 'oklch(0.50 0.008 240)',
+                      color: 'oklch(0.65 0.008 240)',
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = 'oklch(0.80 0.005 240)')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = 'oklch(0.50 0.008 240)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = 'oklch(0.65 0.008 240)')}
                   >
                     {lang === 'fr' ? link.fr : link.en}
                   </button>
@@ -123,7 +123,7 @@ export default function Footer() {
                   fontFamily: "'Space Grotesk', sans-serif",
                   fontSize: '0.875rem',
                   fontWeight: 300,
-                  color: 'oklch(0.50 0.008 240)',
+                  color: 'oklch(0.65 0.008 240)',
                 }}
               >
                 {t('Côte d\'Ivoire — Afrique de l\'Ouest', 'Côte d\'Ivoire — West Africa')}
