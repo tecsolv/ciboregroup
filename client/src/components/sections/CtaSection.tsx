@@ -5,32 +5,38 @@
  * Form connected to Formspree — contact@cibore.ci
  */
 
-import React, { useState } from 'react';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { useInView } from '@/hooks/useInView';
-import { ArrowRight, Send } from 'lucide-react';
+import React, { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { useInView } from "@/hooks/useInView";
+import { ArrowRight, Send } from "lucide-react";
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/contact@cibore.ci';
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/contact@cibore.ci";
 
 export default function CtaSection() {
   const { lang, t } = useLanguage();
   const { ref, inView } = useInView({ threshold: 0.1 });
-  const [formData, setFormData] = useState({ name: '', email: '', company: '', type: '', message: '' });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    type: "",
+    message: "",
+  });
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setError('');
+    setError("");
 
     try {
       const response = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
         body: JSON.stringify({
           name: formData.name,
@@ -46,23 +52,36 @@ export default function CtaSection() {
         setSubmitted(true);
       } else {
         const data = await response.json();
-        setError(data?.errors?.[0]?.message || (lang === 'fr' ? 'Une erreur est survenue. Veuillez réessayer.' : 'An error occurred. Please try again.'));
+        setError(
+          data?.errors?.[0]?.message ||
+            (lang === "fr"
+              ? "Une erreur est survenue. Veuillez réessayer."
+              : "An error occurred. Please try again."),
+        );
       }
     } catch {
-      setError(lang === 'fr' ? 'Une erreur est survenue. Veuillez réessayer.' : 'An error occurred. Please try again.');
+      setError(
+        lang === "fr"
+          ? "Une erreur est survenue. Veuillez réessayer."
+          : "An error occurred. Please try again.",
+      );
     } finally {
       setIsSubmitting(false);
     }
   };
 
   const siteTypes = [
-    { value: 'hotel', fr: 'Hôtel / Resort', en: 'Hotel / Resort' },
-    { value: 'residence', fr: 'Résidence', en: 'Residence' },
-    { value: 'commercial', fr: 'Centre commercial', en: 'Shopping center' },
-    { value: 'business', fr: 'Immeuble de bureaux', en: 'Office building' },
-    { value: 'investor', fr: 'Investisseur', en: 'Investor' },
-    { value: 'supplier', fr: 'Fournisseur / Partenaire industriel', en: 'Supplier / Industrial partner' },
-    { value: 'other', fr: 'Autre', en: 'Other' },
+    { value: "hotel", fr: "Hôtel / Resort", en: "Hotel / Resort" },
+    { value: "residence", fr: "Résidence", en: "Residence" },
+    { value: "commercial", fr: "Centre commercial", en: "Shopping center" },
+    { value: "business", fr: "Immeuble de bureaux", en: "Office building" },
+    { value: "investor", fr: "Investisseur", en: "Investor" },
+    {
+      value: "supplier",
+      fr: "Fournisseur / Partenaire industriel",
+      en: "Supplier / Industrial partner",
+    },
+    { value: "other", fr: "Autre", en: "Other" },
   ];
 
   return (
@@ -70,14 +89,15 @@ export default function CtaSection() {
       id="contact"
       ref={ref as unknown as React.RefObject<HTMLElement>}
       className="relative py-32 md:py-40 section-cinematic"
-      style={{ background: 'oklch(0.05 0.006 240)' }}
+      style={{ background: "oklch(0.05 0.006 240)" }}
     >
       {/* Background glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-8 pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, oklch(0.62 0.19 220 / 15%) 0%, transparent 70%)',
-          filter: 'blur(40px)',
+          background:
+            "radial-gradient(circle, oklch(0.62 0.19 220 / 15%) 0%, transparent 70%)",
+          filter: "blur(40px)",
         }}
       />
 
@@ -85,7 +105,7 @@ export default function CtaSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left: Emotional copy */}
           <div
-            className={`transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+            className={`transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
             <div className="flex items-center gap-3 mb-6">
               <span className="gold-line" />
@@ -95,22 +115,40 @@ export default function CtaSection() {
             <h2
               className="font-display mb-8"
               style={{
-                fontSize: 'clamp(2rem, 4vw, 3.75rem)',
+                fontSize: "clamp(2rem, 4vw, 3.75rem)",
                 fontWeight: 700,
                 lineHeight: 1.05,
-                color: 'oklch(0.97 0.003 240)',
+                color: "oklch(0.97 0.003 240)",
               }}
             >
-              {lang === 'fr' ? (
+              {lang === "fr" ? (
                 <>
-                  Rejoignez<br />
-                  <em style={{ color: 'oklch(0.62 0.19 220)', fontStyle: 'italic' }}>l'infrastructure</em><br />
+                  Rejoignez
+                  <br />
+                  <em
+                    style={{
+                      color: "oklch(0.62 0.19 220)",
+                      fontStyle: "italic",
+                    }}
+                  >
+                    l'infrastructure
+                  </em>
+                  <br />
                   du futur.
                 </>
               ) : (
                 <>
-                  Join<br />
-                  <em style={{ color: 'oklch(0.62 0.19 220)', fontStyle: 'italic' }}>the infrastructure</em><br />
+                  Join
+                  <br />
+                  <em
+                    style={{
+                      color: "oklch(0.62 0.19 220)",
+                      fontStyle: "italic",
+                    }}
+                  >
+                    the infrastructure
+                  </em>
+                  <br />
                   of the future.
                 </>
               )}
@@ -119,16 +157,16 @@ export default function CtaSection() {
             <p
               style={{
                 fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: '1.0625rem',
+                fontSize: "1.0625rem",
                 fontWeight: 300,
-                color: 'oklch(0.60 0.008 240)',
+                color: "oklch(0.60 0.008 240)",
                 lineHeight: 1.75,
-                marginBottom: '2rem',
+                marginBottom: "2rem",
               }}
             >
               {t(
                 "Les leaders africains de la mobilité de demain se positionnent aujourd'hui. Votre site peut être l'un des premiers à faire partie du réseau CIBORE.",
-                "Africa's mobility leaders of tomorrow are positioning themselves today. Your site can be one of the first to be part of the CIBORE network."
+                "Africa's mobility leaders of tomorrow are positioning themselves today. Your site can be one of the first to be part of the CIBORE network.",
               )}
             </p>
 
@@ -136,28 +174,29 @@ export default function CtaSection() {
             <div
               className="p-8"
               style={{
-                border: '1px solid oklch(0.73 0.12 75 / 25%)',
-                background: 'oklch(0.73 0.12 75 / 4%)',
+                border: "1px solid oklch(0.73 0.12 75 / 25%)",
+                background: "oklch(0.73 0.12 75 / 4%)",
               }}
             >
               <p
                 className="font-display mb-4"
                 style={{
-                  fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
-                  fontStyle: 'italic',
+                  fontSize: "clamp(1rem, 1.5vw, 1.25rem)",
+                  fontStyle: "italic",
                   fontWeight: 600,
-                  color: 'oklch(0.73 0.12 75)',
+                  color: "oklch(0.73 0.12 75)",
                   lineHeight: 1.5,
                 }}
               >
-                "The future of African mobility is not a question.<br />
+                "The future of African mobility is not a question.
+                <br />
                 CIBORE is the answer already being built."
               </p>
               <div className="flex items-center gap-3">
                 <span className="gold-line" />
                 <span
                   className="section-label"
-                  style={{ color: 'oklch(0.55 0.008 240)' }}
+                  style={{ color: "oklch(0.55 0.008 240)" }}
                 >
                   CIBORE — 2026
                 </span>
@@ -167,49 +206,49 @@ export default function CtaSection() {
 
           {/* Right: Contact form */}
           <div
-            className={`transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-            style={{ transitionDelay: '200ms' }}
+            className={`transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+            style={{ transitionDelay: "200ms" }}
           >
             {submitted ? (
               <div
                 className="p-10 text-center"
                 style={{
-                  border: '1px solid oklch(0.62 0.19 220 / 30%)',
-                  background: 'oklch(0.62 0.19 220 / 5%)',
+                  border: "1px solid oklch(0.62 0.19 220 / 30%)",
+                  background: "oklch(0.62 0.19 220 / 5%)",
                 }}
               >
                 <div
                   className="w-16 h-16 mx-auto mb-6 flex items-center justify-center"
                   style={{
-                    background: 'oklch(0.62 0.19 220 / 15%)',
-                    border: '1px solid oklch(0.62 0.19 220 / 30%)',
+                    background: "oklch(0.62 0.19 220 / 15%)",
+                    border: "1px solid oklch(0.62 0.19 220 / 30%)",
                   }}
                 >
-                  <Send size={24} style={{ color: 'oklch(0.62 0.19 220)' }} />
+                  <Send size={24} style={{ color: "oklch(0.62 0.19 220)" }} />
                 </div>
                 <h3
                   className="font-display mb-3"
                   style={{
-                    fontSize: '1.5rem',
+                    fontSize: "1.5rem",
                     fontWeight: 600,
-                    fontStyle: 'italic',
-                    color: 'oklch(0.97 0.003 240)',
+                    fontStyle: "italic",
+                    color: "oklch(0.97 0.003 240)",
                   }}
                 >
-                  {t('Message envoyé.', 'Message sent.')}
+                  {t("Message envoyé.", "Message sent.")}
                 </h3>
                 <p
                   style={{
                     fontFamily: "'Space Grotesk', sans-serif",
-                    fontSize: '0.9375rem',
+                    fontSize: "0.9375rem",
                     fontWeight: 300,
-                    color: 'oklch(0.60 0.008 240)',
+                    color: "oklch(0.60 0.008 240)",
                     lineHeight: 1.6,
                   }}
                 >
                   {t(
-                    'Notre équipe vous contactera dans les plus brefs délais pour discuter de votre projet.',
-                    'Our team will contact you as soon as possible to discuss your project.'
+                    "Notre équipe vous contactera dans les plus brefs délais pour discuter de votre projet.",
+                    "Our team will contact you as soon as possible to discuss your project.",
                   )}
                 </p>
               </div>
@@ -218,29 +257,47 @@ export default function CtaSection() {
                 <div
                   className="p-6 mb-6"
                   style={{
-                    border: '1px solid oklch(1 0 0 / 6%)',
-                    background: 'oklch(0.09 0.010 240)',
+                    border: "1px solid oklch(1 0 0 / 6%)",
+                    background: "oklch(0.09 0.010 240)",
                   }}
                 >
                   <p className="section-label mb-1">
-                    {t('Formulaire de contact', 'Contact form')}
+                    {t("Formulaire de contact", "Contact form")}
                   </p>
                   <p
                     style={{
                       fontFamily: "'Space Grotesk', sans-serif",
-                      fontSize: '0.8125rem',
+                      fontSize: "0.8125rem",
                       fontWeight: 300,
-                      color: 'oklch(0.50 0.008 240)',
+                      color: "oklch(0.50 0.008 240)",
                     }}
                   >
-                    {t('Devenir site partenaire · Investisseur · Partenariat', 'Become a partner site · Investor · Partnership')}
+                    {t(
+                      "Devenir site partenaire · Investisseur · Partenariat",
+                      "Become a partner site · Investor · Partnership",
+                    )}
                   </p>
                 </div>
 
                 {[
-                  { key: 'name', fr: 'Nom complet', en: 'Full name', type: 'text' },
-                  { key: 'email', fr: 'Adresse email', en: 'Email address', type: 'email' },
-                  { key: 'company', fr: 'Entreprise / Organisation', en: 'Company / Organization', type: 'text' },
+                  {
+                    key: "name",
+                    fr: "Nom complet",
+                    en: "Full name",
+                    type: "text",
+                  },
+                  {
+                    key: "email",
+                    fr: "Adresse email",
+                    en: "Email address",
+                    type: "email",
+                  },
+                  {
+                    key: "company",
+                    fr: "Entreprise / Organisation",
+                    en: "Company / Organization",
+                    type: "text",
+                  },
                 ].map((field) => (
                   <div key={field.key}>
                     <label
@@ -248,39 +305,52 @@ export default function CtaSection() {
                       className="block mb-1.5"
                       style={{
                         fontFamily: "'Space Grotesk', sans-serif",
-                        fontSize: '0.6875rem',
+                        fontSize: "0.6875rem",
                         fontWeight: 500,
-                        letterSpacing: '0.12em',
-                        textTransform: 'uppercase',
-                        color: 'oklch(0.55 0.008 240)',
+                        letterSpacing: "0.12em",
+                        textTransform: "uppercase",
+                        color: "oklch(0.55 0.008 240)",
                       }}
                     >
-                      {lang === 'fr' ? field.fr : field.en}
+                      {lang === "fr" ? field.fr : field.en}
                     </label>
                     <input
                       id={`cf-${field.key}`}
                       name={field.key}
-                      autoComplete={field.key === 'email' ? 'email' : field.key === 'name' ? 'name' : 'organization'}
+                      autoComplete={
+                        field.key === "email"
+                          ? "email"
+                          : field.key === "name"
+                            ? "name"
+                            : "organization"
+                      }
                       type={field.type}
                       required
                       value={formData[field.key as keyof typeof formData]}
-                      onChange={(e) => setFormData({ ...formData, [field.key]: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          [field.key]: e.target.value,
+                        })
+                      }
                       className="w-full px-4 py-3 outline-none transition-all duration-200"
                       style={{
-                        background: 'oklch(0.10 0.012 240)',
-                        border: '1px solid oklch(1 0 0 / 8%)',
-                        color: 'oklch(0.90 0.005 240)',
+                        background: "oklch(0.10 0.012 240)",
+                        border: "1px solid oklch(1 0 0 / 8%)",
+                        color: "oklch(0.90 0.005 240)",
                         fontFamily: "'Space Grotesk', sans-serif",
-                        fontSize: '0.9375rem',
+                        fontSize: "0.9375rem",
                         fontWeight: 300,
                       }}
                       onFocus={(e) => {
-                        e.target.style.borderColor = 'oklch(0.62 0.19 220 / 50%)';
-                        e.target.style.boxShadow = '0 0 0 1px oklch(0.62 0.19 220 / 20%)';
+                        e.target.style.borderColor =
+                          "oklch(0.62 0.19 220 / 50%)";
+                        e.target.style.boxShadow =
+                          "0 0 0 1px oklch(0.62 0.19 220 / 20%)";
                       }}
                       onBlur={(e) => {
-                        e.target.style.borderColor = 'oklch(1 0 0 / 8%)';
-                        e.target.style.boxShadow = 'none';
+                        e.target.style.borderColor = "oklch(1 0 0 / 8%)";
+                        e.target.style.boxShadow = "none";
                       }}
                     />
                   </div>
@@ -293,36 +363,47 @@ export default function CtaSection() {
                     className="block mb-1.5"
                     style={{
                       fontFamily: "'Space Grotesk', sans-serif",
-                      fontSize: '0.6875rem',
+                      fontSize: "0.6875rem",
                       fontWeight: 500,
-                      letterSpacing: '0.12em',
-                      textTransform: 'uppercase',
-                      color: 'oklch(0.65 0.008 240)',
+                      letterSpacing: "0.12em",
+                      textTransform: "uppercase",
+                      color: "oklch(0.65 0.008 240)",
                     }}
                   >
-                    {t('Type de site / Profil', 'Site type / Profile')}
+                    {t("Type de site / Profil", "Site type / Profile")}
                   </label>
                   <select
                     id="cf-type"
                     name="type"
                     value={formData.type}
-                    onChange={(e) => setFormData({ ...formData, type: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, type: e.target.value })
+                    }
                     className="w-full px-4 py-3 outline-none transition-all duration-200"
                     style={{
-                      background: 'oklch(0.10 0.012 240)',
-                      border: '1px solid oklch(1 0 0 / 8%)',
-                      color: formData.type ? 'oklch(0.90 0.005 240)' : 'oklch(0.45 0.008 240)',
+                      background: "oklch(0.10 0.012 240)",
+                      border: "1px solid oklch(1 0 0 / 8%)",
+                      color: formData.type
+                        ? "oklch(0.90 0.005 240)"
+                        : "oklch(0.45 0.008 240)",
                       fontFamily: "'Space Grotesk', sans-serif",
-                      fontSize: '0.9375rem',
+                      fontSize: "0.9375rem",
                       fontWeight: 300,
                     }}
                   >
-                    <option value="" style={{ background: 'oklch(0.10 0.012 240)' }}>
-                      {t('Sélectionner...', 'Select...')}
+                    <option
+                      value=""
+                      style={{ background: "oklch(0.10 0.012 240)" }}
+                    >
+                      {t("Sélectionner...", "Select...")}
                     </option>
                     {siteTypes.map((st) => (
-                      <option key={st.value} value={st.value} style={{ background: 'oklch(0.10 0.012 240)' }}>
-                        {lang === 'fr' ? st.fr : st.en}
+                      <option
+                        key={st.value}
+                        value={st.value}
+                        style={{ background: "oklch(0.10 0.012 240)" }}
+                      >
+                        {lang === "fr" ? st.fr : st.en}
                       </option>
                     ))}
                   </select>
@@ -335,38 +416,50 @@ export default function CtaSection() {
                     className="block mb-1.5"
                     style={{
                       fontFamily: "'Space Grotesk', sans-serif",
-                      fontSize: '0.6875rem',
+                      fontSize: "0.6875rem",
                       fontWeight: 500,
-                      letterSpacing: '0.12em',
-                      textTransform: 'uppercase',
-                      color: 'oklch(0.65 0.008 240)',
+                      letterSpacing: "0.12em",
+                      textTransform: "uppercase",
+                      color: "oklch(0.65 0.008 240)",
                     }}
                   >
-                    {t('Message (optionnel)', 'Message (optional)')}
+                    {t("Message (optionnel)", "Message (optional)")}
                   </label>
                   <textarea
                     id="cf-message"
                     name="message"
                     rows={3}
                     value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
                     className="w-full px-4 py-3 outline-none transition-all duration-200 resize-none"
                     style={{
-                      background: 'oklch(0.10 0.012 240)',
-                      border: '1px solid oklch(1 0 0 / 8%)',
-                      color: 'oklch(0.90 0.005 240)',
+                      background: "oklch(0.10 0.012 240)",
+                      border: "1px solid oklch(1 0 0 / 8%)",
+                      color: "oklch(0.90 0.005 240)",
                       fontFamily: "'Space Grotesk', sans-serif",
-                      fontSize: '0.9375rem',
+                      fontSize: "0.9375rem",
                       fontWeight: 300,
                     }}
-                    onFocus={(e) => { e.target.style.borderColor = 'oklch(0.62 0.19 220 / 50%)'; }}
-                    onBlur={(e) => { e.target.style.borderColor = 'oklch(1 0 0 / 8%)'; }}
+                    onFocus={(e) => {
+                      e.target.style.borderColor = "oklch(0.62 0.19 220 / 50%)";
+                    }}
+                    onBlur={(e) => {
+                      e.target.style.borderColor = "oklch(1 0 0 / 8%)";
+                    }}
                   />
                 </div>
 
                 {/* Error message */}
                 {error && (
-                  <p style={{ color: 'oklch(0.65 0.20 30)', fontSize: '0.875rem', fontFamily: "'Space Grotesk', sans-serif" }}>
+                  <p
+                    style={{
+                      color: "oklch(0.65 0.20 30)",
+                      fontSize: "0.875rem",
+                      fontFamily: "'Space Grotesk', sans-serif",
+                    }}
+                  >
                     {error}
                   </p>
                 )}
@@ -378,8 +471,8 @@ export default function CtaSection() {
                   style={{ opacity: isSubmitting ? 0.7 : 1 }}
                 >
                   {isSubmitting
-                    ? t('Envoi en cours...', 'Sending...')
-                    : t('Devenir partenaire CIBORE', 'Become a CIBORE partner')}
+                    ? t("Envoi en cours...", "Sending...")
+                    : t("Devenir partenaire CIBORE", "Become a CIBORE partner")}
                   <ArrowRight size={14} />
                 </button>
               </form>
