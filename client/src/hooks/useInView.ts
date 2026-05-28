@@ -3,7 +3,7 @@
  * Scroll-triggered animation support using IntersectionObserver
  */
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 interface UseInViewOptions {
   threshold?: number;
@@ -12,7 +12,7 @@ interface UseInViewOptions {
 }
 
 export function useInView(options: UseInViewOptions = {}) {
-  const { threshold = 0.15, rootMargin = '0px', once = true } = options;
+  const { threshold = 0.15, rootMargin = "0px", once = true } = options;
   const ref = useRef<HTMLElement>(null);
   const [inView, setInView] = useState(false);
 
@@ -29,7 +29,7 @@ export function useInView(options: UseInViewOptions = {}) {
           setInView(false);
         }
       },
-      { threshold, rootMargin }
+      { threshold, rootMargin },
     );
 
     observer.observe(element);

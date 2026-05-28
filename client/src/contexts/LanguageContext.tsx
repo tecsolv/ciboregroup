@@ -4,9 +4,9 @@
  * Narrative signature always in English.
  */
 
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from "react";
 
-type Lang = 'fr' | 'en';
+type Lang = "fr" | "en";
 
 interface LanguageContextType {
   lang: Lang;
@@ -15,15 +15,15 @@ interface LanguageContextType {
 }
 
 const LanguageContext = createContext<LanguageContextType>({
-  lang: 'fr',
+  lang: "fr",
   setLang: () => {},
   t: (fr) => fr,
 });
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLang] = useState<Lang>('fr');
+  const [lang, setLang] = useState<Lang>("fr");
 
-  const t = (fr: string, en: string) => lang === 'fr' ? fr : en;
+  const t = (fr: string, en: string) => (lang === "fr" ? fr : en);
 
   return (
     <LanguageContext.Provider value={{ lang, setLang, t }}>
