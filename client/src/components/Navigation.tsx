@@ -49,7 +49,7 @@ export default function Navigation() {
               className="flex items-center gap-2 group"
             >
               <img
-                src="/cibore-logo.png"
+                src="/cibore-logo.webp" width={160} height={48} loading="eager" decoding="async" fetchPriority="high"
                 alt="CIBORE Logo"
                 className="h-10 w-auto"
               />

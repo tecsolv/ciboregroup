@@ -35,7 +35,7 @@ export default function Footer() {
           <div className="md:col-span-1">
             {/* Logo */}
             <img
-              src="/cibore-logo.png"
+              src="/cibore-logo.webp" width={120} height={36} loading="lazy" decoding="async"
               alt="CIBORE Logo"
               className="h-12 w-auto mb-6"
             />
