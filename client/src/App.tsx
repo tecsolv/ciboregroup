@@ -14,6 +14,7 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 import WhatsAppButton from "./components/WhatsAppButton";
 import CookieConsent from "./components/CookieConsent";
 import Home from "./pages/Home";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 function Router() {
   return (
@@ -36,6 +37,7 @@ function App() {
             {/* Global floating components */}
             <WhatsAppButton />
             <CookieConsent />
+            <SpeedInsights />
           </TooltipProvider>
         </LanguageProvider>
       </ThemeProvider>
