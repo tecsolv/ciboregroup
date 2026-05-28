@@ -49,7 +49,7 @@ export default function Navigation() {
               className="flex items-center gap-2 group"
             >
               <img
-                src="/cibore-logo.webp" width={160} height={48} loading="eager" decoding="async" fetchPriority="high"
+                src="/cibore-logo.png"
                 alt="CIBORE Logo"
                 className="h-10 w-auto"
               />
@@ -81,18 +81,6 @@ export default function Navigation() {
               {/* Language switcher */}
               <div className="flex items-center gap-1">
                 <button
-                  onClick={() => setLang('fr')}
-                  className={`font-ui text-xs font-500 tracking-wider uppercase transition-all duration-200 px-2 py-1 ${
-                    lang === 'fr'
-                      ? 'text-white'
-                      : 'opacity-40 hover:opacity-70'
-                  }`}
-                  style={{ fontSize: '0.6875rem', letterSpacing: '0.1em' }}
-                >
-                  FR
-                </button>
-                <span style={{ color: 'oklch(0.4 0.005 240)', fontSize: '0.625rem' }}>|</span>
-                <button
                   onClick={() => setLang('en')}
                   className={`font-ui text-xs font-500 tracking-wider uppercase transition-all duration-200 px-2 py-1 ${
                     lang === 'en'
@@ -102,6 +90,18 @@ export default function Navigation() {
                   style={{ fontSize: '0.6875rem', letterSpacing: '0.1em' }}
                 >
                   EN
+                </button>
+                <span style={{ color: 'oklch(0.4 0.005 240)', fontSize: '0.625rem' }}>|</span>
+                <button
+                  onClick={() => setLang('fr')}
+                  className={`font-ui text-xs font-500 tracking-wider uppercase transition-all duration-200 px-2 py-1 ${
+                    lang === 'fr'
+                      ? 'text-white'
+                      : 'opacity-40 hover:opacity-70'
+                  }`}
+                  style={{ fontSize: '0.6875rem', letterSpacing: '0.1em' }}
+                >
+                  FR
                 </button>
               </div>
 
@@ -159,17 +159,17 @@ export default function Navigation() {
             </button>
             <div className="flex items-center gap-4 mt-2">
               <button
-                onClick={() => { setLang('fr'); setMenuOpen(false); }}
-                className={`font-ui text-sm tracking-widest uppercase ${lang === 'fr' ? 'text-white' : 'opacity-40'}`}
-              >
-                Français
-              </button>
-              <span style={{ color: 'oklch(0.4 0.005 240)' }}>|</span>
-              <button
                 onClick={() => { setLang('en'); setMenuOpen(false); }}
                 className={`font-ui text-sm tracking-widest uppercase ${lang === 'en' ? 'text-white' : 'opacity-40'}`}
               >
                 English
+              </button>
+              <span style={{ color: 'oklch(0.4 0.005 240)' }}>|</span>
+              <button
+                onClick={() => { setLang('fr'); setMenuOpen(false); }}
+                className={`font-ui text-sm tracking-widest uppercase ${lang === 'fr' ? 'text-white' : 'opacity-40'}`}
+              >
+                Français
               </button>
             </div>
           </div>

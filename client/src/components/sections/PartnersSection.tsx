@@ -142,7 +142,7 @@ export default function PartnersSection() {
                   fontFamily: "'Space Grotesk', sans-serif",
                   fontSize: '0.75rem',
                   fontWeight: 300,
-                  color: 'oklch(0.68 0.008 240)',
+                  color: 'oklch(0.55 0.008 240)',
                   lineHeight: 1.5,
                 }}
               >
@@ -195,7 +195,7 @@ export default function PartnersSection() {
                       fontFamily: "'Space Grotesk', sans-serif",
                       fontSize: '0.6875rem',
                       fontWeight: 300,
-                      color: 'oklch(0.62 0.008 240)',
+                      color: 'oklch(0.45 0.008 240)',
                     }}
                   >
                     {lang === 'fr' ? audience.fr_sub : audience.en_sub}

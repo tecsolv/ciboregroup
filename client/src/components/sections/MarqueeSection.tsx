@@ -52,7 +52,7 @@ export default function MarqueeSection() {
               letterSpacing: item.accent ? '0' : '0.2em',
               color: item.accent
                 ? 'oklch(0.73 0.12 75 / 60%)'
-                : 'oklch(0.58 0.008 240)',
+                : 'oklch(0.40 0.008 240)',
             }}
           >
             {item.text}

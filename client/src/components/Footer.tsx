@@ -26,7 +26,7 @@ export default function Footer() {
   return (
     <footer
       className="relative"
-      style={{ background: 'oklch(0.04 0.005 240)', borderTop: '1px solid oklch(1 0 0 / 6%)' }}
+      style={{ background: '#0A4B33', borderTop: '2px solid #D4AF37' }}
     >
       {/* Main footer content */}
       <div className="container py-16 md:py-20">
@@ -35,7 +35,7 @@ export default function Footer() {
           <div className="md:col-span-1">
             {/* Logo */}
             <img
-              src="/cibore-logo.webp" width={120} height={36} loading="lazy" decoding="async"
+              src="/cibore-logo.png"
               alt="CIBORE Logo"
               className="h-12 w-auto mb-6"
             />
@@ -45,7 +45,7 @@ export default function Footer() {
                 fontFamily: "'Space Grotesk', sans-serif",
                 fontSize: '0.8125rem',
                 fontWeight: 300,
-                color: 'oklch(0.62 0.008 240)',
+                color: 'rgba(255,255,255,0.60)',
                 lineHeight: 1.7,
                 marginBottom: '1.5rem',
               }}
@@ -69,7 +69,7 @@ export default function Footer() {
                   fontSize: '0.8125rem',
                   fontStyle: 'italic',
                   fontWeight: 400,
-                  color: 'oklch(0.73 0.12 75 / 70%)',
+                  color: '#D4AF37',
                   lineHeight: 1.6,
                 }}
               >
@@ -98,10 +98,10 @@ export default function Footer() {
                       fontFamily: "'Space Grotesk', sans-serif",
                       fontSize: '0.875rem',
                       fontWeight: 300,
-                      color: 'oklch(0.65 0.008 240)',
+                      color: 'rgba(255,255,255,0.65)',
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = 'oklch(0.80 0.005 240)')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = 'oklch(0.65 0.008 240)')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,1)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.65)')}
                   >
                     {lang === 'fr' ? link.fr : link.en}
                   </button>
@@ -123,7 +123,7 @@ export default function Footer() {
                   fontFamily: "'Space Grotesk', sans-serif",
                   fontSize: '0.875rem',
                   fontWeight: 300,
-                  color: 'oklch(0.65 0.008 240)',
+                  color: 'rgba(255,255,255,0.65)',
                 }}
               >
                 {t('Côte d\'Ivoire — Afrique de l\'Ouest', 'Côte d\'Ivoire — West Africa')}
@@ -168,7 +168,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div
-        style={{ borderTop: '1px solid oklch(1 0 0 / 5%)' }}
+        style={{ borderTop: '1px solid rgba(212,175,55,0.25)' }}
       >
         <div className="container py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -177,7 +177,7 @@ export default function Footer() {
                 fontFamily: "'Space Grotesk', sans-serif",
                 fontSize: '0.6875rem',
                 fontWeight: 300,
-                color: 'oklch(0.62 0.008 240)',
+                color: 'rgba(255,255,255,0.50)',
                 letterSpacing: '0.05em',
               }}
             >
@@ -188,7 +188,7 @@ export default function Footer() {
                 fontFamily: "'Space Grotesk', sans-serif",
                 fontSize: '0.6875rem',
                 fontWeight: 300,
-                color: 'oklch(0.58 0.008 240)',
+                color: 'rgba(255,255,255,0.40)',
                 letterSpacing: '0.05em',
               }}
             >
@@ -199,7 +199,7 @@ export default function Footer() {
                 fontFamily: "'Space Grotesk', sans-serif",
                 fontSize: '0.6875rem',
                 fontWeight: 300,
-                color: 'oklch(0.58 0.008 240)',
+                color: 'rgba(255,255,255,0.40)',
                 letterSpacing: '0.05em',
               }}
             >
@@ -210,7 +210,7 @@ export default function Footer() {
                 fontFamily: "'Space Grotesk', sans-serif",
                 fontSize: '0.6875rem',
                 fontWeight: 300,
-                color: 'oklch(0.58 0.008 240)',
+                color: 'rgba(255,255,255,0.40)',
                 letterSpacing: '0.05em',
               }}
             >

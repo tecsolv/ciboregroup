@@ -121,28 +121,17 @@ export default function SitesSection() {
           }`}
           style={{ transitionDelay: '150ms' }}
         >
-          <picture>
-            <source
-              type="image/webp"
-              srcSet="/cibore-sites-premium-640.webp 640w, /cibore-sites-premium-960.webp 960w, /cibore-sites-premium.webp 1400w"
-              sizes="(max-width: 640px) 640px, (max-width: 960px) 960px, 1400px"
-            />
-            <img
-              src="/cibore-sites-premium.png"
-              alt="CIBORE — Infrastructure de recharge premium"
-              className="w-full h-auto object-cover"
-              width={1400}
-              height={623}
-              loading="lazy"
-              decoding="async"
-              style={{
-                display: 'block',
-                maxHeight: '520px',
-                objectFit: 'cover',
-                objectPosition: 'center',
-              }}
-            />
-          </picture>
+          <img
+            src="/cibore-sites-premium.png"
+            alt="CIBORE — Infrastructure de recharge premium"
+            className="w-full h-auto object-cover"
+            style={{
+              display: 'block',
+              maxHeight: '520px',
+              objectFit: 'cover',
+              objectPosition: 'center',
+            }}
+          />
         </div>
 
         {/* Site types grid */}
@@ -183,7 +172,7 @@ export default function SitesSection() {
                       style={{
                         fontSize: '0.8125rem',
                         fontWeight: 300,
-                        color: 'oklch(0.65 0.008 240)',
+                        color: 'oklch(0.50 0.008 240)',
                         lineHeight: 1.5,
                       }}
                     >
