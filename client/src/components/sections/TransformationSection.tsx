@@ -8,8 +8,8 @@ import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useInView } from '@/hooks/useInView';
 
-const CITY_IMAGE = '/cibore-city.webp';
-const VISION_IMAGE = '/cibore-vision.webp';
+const CITY_IMAGE = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663658365107/3kG2Z6cjcUyd474D4MMg23/cibore-city-KAcgN9mENjtRTDPfZEx9xn.webp';
+const VISION_IMAGE = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663658365107/3kG2Z6cjcUyd474D4MMg23/cibore-vision-5xdiKuMzh44DJZDP8uLBpF.webp';
 
 const pillars = [
   {
@@ -52,7 +52,7 @@ export default function TransformationSection() {
       {/* City image hero */}
       <div className="relative h-[60vh] md:h-[70vh] overflow-hidden">
         <img
-          src={CITY_IMAGE} loading="lazy" width={1400} height={700} decoding="async"
+          src={CITY_IMAGE}
           alt="African City of the Future"
           className="w-full h-full object-cover"
         />
@@ -191,7 +191,7 @@ export default function TransformationSection() {
               style={{ transitionDelay: '400ms' }}
             >
               <img
-                src={VISION_IMAGE} loading="lazy" width={1400} height={700} decoding="async"
+                src={VISION_IMAGE}
                 alt="West Africa Energy Vision"
                 className="w-full object-cover"
                 style={{ aspectRatio: '16/10' }}
