@@ -122,11 +122,7 @@ export default function SitesSection() {
           style={{ transitionDelay: '150ms' }}
         >
           <picture>
-            <source
-              type="image/webp"
-              srcSet="/cibore-sites-premium-640.webp 640w, /cibore-sites-premium-960.webp 960w, /cibore-sites-premium.webp 1400w"
-              sizes="(max-width: 640px) 640px, (max-width: 960px) 960px, 1400px"
-            />
+            <source srcSet="/cibore-sites-premium.webp" type="image/webp" />
             <img
               src="/cibore-sites-premium.png"
               alt="CIBORE — Infrastructure de recharge premium"

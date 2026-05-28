@@ -238,12 +238,14 @@ export default function CtaSection() {
                 </div>
 
                 {[
-                  { key: 'name', fr: 'Nom complet', en: 'Full name', type: 'text' },
+                  { key: 'name', id: 'cf-name', fr: 'Nom complet', en: 'Full name', type: 'text' },
                   { key: 'email', fr: 'Adresse email', en: 'Email address', type: 'email' },
                   { key: 'company', fr: 'Entreprise / Organisation', en: 'Company / Organization', type: 'text' },
                 ].map((field) => (
                   <div key={field.key}>
                     <label
+                    htmlFor="cf-message"
+                    htmlFor="cf-type"
                       htmlFor={`cf-${field.key}`}
                       className="block mb-1.5"
                       style={{
@@ -258,9 +260,6 @@ export default function CtaSection() {
                       {lang === 'fr' ? field.fr : field.en}
                     </label>
                     <input
-                      id={`cf-${field.key}`}
-                      name={field.key}
-                      autoComplete={field.key === 'email' ? 'email' : field.key === 'name' ? 'name' : 'organization'}
                       type={field.type}
                       required
                       value={formData[field.key as keyof typeof formData]}
@@ -289,7 +288,6 @@ export default function CtaSection() {
                 {/* Site type select */}
                 <div>
                   <label
-                    htmlFor="cf-type"
                     className="block mb-1.5"
                     style={{
                       fontFamily: "'Space Grotesk', sans-serif",
@@ -297,7 +295,7 @@ export default function CtaSection() {
                       fontWeight: 500,
                       letterSpacing: '0.12em',
                       textTransform: 'uppercase',
-                      color: 'oklch(0.65 0.008 240)',
+                      color: 'oklch(0.55 0.008 240)',
                     }}
                   >
                     {t('Type de site / Profil', 'Site type / Profile')}
@@ -331,7 +329,6 @@ export default function CtaSection() {
                 {/* Message */}
                 <div>
                   <label
-                    htmlFor="cf-message"
                     className="block mb-1.5"
                     style={{
                       fontFamily: "'Space Grotesk', sans-serif",
@@ -339,7 +336,7 @@ export default function CtaSection() {
                       fontWeight: 500,
                       letterSpacing: '0.12em',
                       textTransform: 'uppercase',
-                      color: 'oklch(0.65 0.008 240)',
+                      color: 'oklch(0.55 0.008 240)',
                     }}
                   >
                     {t('Message (optionnel)', 'Message (optional)')}

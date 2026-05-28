@@ -8,8 +8,8 @@ import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useInView } from '@/hooks/useInView';
 
-const CITY_IMAGE = '/cibore-city.webp';
-const VISION_IMAGE = '/cibore-vision.webp';
+const CITY_IMAGE = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663658365107/3kG2Z6cjcUyd474D4MMg23/cibore-city-KAcgN9mENjtRTDPfZEx9xn.webp';
+const VISION_IMAGE = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663658365107/3kG2Z6cjcUyd474D4MMg23/cibore-vision-5xdiKuMzh44DJZDP8uLBpF.webp';
 
 const pillars = [
   {

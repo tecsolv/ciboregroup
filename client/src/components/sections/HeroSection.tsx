@@ -8,7 +8,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 
-const HERO_IMAGE = '/cibore-hero.webp';
+const HERO_IMAGE = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663658365107/3kG2Z6cjcUyd474D4MMg23/cibore-hero-dW9PYEnvHNfNP7aPBUTr4u.webp';
 
 export default function HeroSection() {
   const { lang, t } = useLanguage();
@@ -26,7 +26,7 @@ export default function HeroSection() {
       {/* Background image */}
       <div className="absolute inset-0 overflow-hidden">
         <img
-          src={HERO_IMAGE} fetchPriority="high" decoding="async"
+          src={HERO_IMAGE}
           alt="CIBORE EV Infrastructure"
           className="w-full h-full object-cover object-center"
           style={{ transform: 'scale(1.04)', transition: 'transform 10s cubic-bezier(0.23, 1, 0.32, 1)' }}
