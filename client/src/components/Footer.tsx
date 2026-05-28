@@ -177,7 +177,7 @@ export default function Footer() {
                 fontFamily: "'Space Grotesk', sans-serif",
                 fontSize: '0.6875rem',
                 fontWeight: 300,
-                color: 'oklch(0.35 0.008 240)',
+                color: 'oklch(0.62 0.008 240)',
                 letterSpacing: '0.05em',
               }}
             >
@@ -188,7 +188,7 @@ export default function Footer() {
                 fontFamily: "'Space Grotesk', sans-serif",
                 fontSize: '0.6875rem',
                 fontWeight: 300,
-                color: 'oklch(0.30 0.008 240)',
+                color: 'oklch(0.58 0.008 240)',
                 letterSpacing: '0.05em',
               }}
             >
@@ -199,7 +199,7 @@ export default function Footer() {
                 fontFamily: "'Space Grotesk', sans-serif",
                 fontSize: '0.6875rem',
                 fontWeight: 300,
-                color: 'oklch(0.30 0.008 240)',
+                color: 'oklch(0.58 0.008 240)',
                 letterSpacing: '0.05em',
               }}
             >
@@ -210,7 +210,7 @@ export default function Footer() {
                 fontFamily: "'Space Grotesk', sans-serif",
                 fontSize: '0.6875rem',
                 fontWeight: 300,
-                color: 'oklch(0.30 0.008 240)',
+                color: 'oklch(0.58 0.008 240)',
                 letterSpacing: '0.05em',
               }}
             >
