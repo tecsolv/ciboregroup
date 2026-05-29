@@ -4,6 +4,7 @@
  * Includes: WhatsApp floating button + Cookie consent
  */
 
+import { Analytics } from "@vercel/analytics/react";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
@@ -36,6 +37,7 @@ function App() {
             {/* Global floating components */}
             <WhatsAppButton />
             <CookieConsent />
+            <Analytics />
           </TooltipProvider>
         </LanguageProvider>
       </ThemeProvider>
